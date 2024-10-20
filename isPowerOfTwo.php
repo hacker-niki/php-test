@@ -1,10 +1,14 @@
 function isPowerOfTwo($n): bool
 {
+    if ($n < 0)
+        return false;
+
     while ($n > 1) {
-        if ($n % 2 == 1 and $n > 1)
+        if ($n & 1)
             return false;
         $n >>= 1;
     }
+        
     return true;
 }
 
